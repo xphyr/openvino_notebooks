@@ -26,8 +26,9 @@ USER root
 RUN dnf remove -y nodejs && \
   dnf module -y reset nodejs && \
   dnf module -y enable nodejs:20 && \
-  dnf install -y nodejs-20.9.0 mesa-libGL dos2unix libsndfile && \
-  dnf -y update-minimal --security --sec-severity=Important --sec-severity=Critical --sec-severity=Moderate
+  dnf install -y nodejs-20.9.0 mesa-libGL dos2unix libsndfile 
+  ## && \
+  ## dnf -y update-minimal --security --sec-severity=Important --sec-severity=Critical --sec-severity=Moderate
 
 # GPU drivers
 RUN dnf install -y 'dnf-command(config-manager)' && \
